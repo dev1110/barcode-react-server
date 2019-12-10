@@ -28,7 +28,7 @@ const app = express();
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 app.use(cors());
-app.get('/',(req,res)=>{
+app.post('/',(req,res)=>{
     const {mid, from, to}=req.body;
     knex.raw("SELECT `ename` as `name`,`eid` as `uid`,`barcode` as `cid`, \
     SUM(`coffee`) AS `coffee`, \
