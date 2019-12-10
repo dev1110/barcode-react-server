@@ -64,7 +64,10 @@ app.get('/',(req,res)=>{
     })
     .catch(err => res.status(400).json(err));
 })
-app.listen(3000);
+const PORT = process.env.PORT
+app.listen(PORT||3000,()=>{
+    console.log(`Running on port ${PORT}`)
+});
 
 
 // const http = require('http');
